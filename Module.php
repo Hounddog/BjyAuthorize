@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize;
+namespace ZfcAcl;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
@@ -19,8 +19,8 @@ class Module implements
         $app        = $e->getTarget();
         $config     = $app->getConfig();
         $sm         = $app->getServiceManager();
-        $service    = $sm->get('BjyAuthorize\Service\Authorize');
-        $strategy   = $sm->get($config['bjyauthorize']['unauthorized_strategy']);
+        $service    = $sm->get('ZfcAcl\Service\Authorize');
+        $strategy   = $sm->get($config['zfcacl']['unauthorized_strategy']);
 
         foreach ($service->getGuards() as $guard) {
             $app->getEventManager()->attach('route', array($guard, 'onRoute'), -1000);
@@ -33,36 +33,36 @@ class Module implements
     {
         return array(
             'factories' => array(
-                'BjyAuthorize\Service\Authorize' => 'BjyAuthorize\Service\AuthorizeFactory',
+                'ZfcAcl\Service\Authorize' => 'ZfcAcl\Service\AuthorizeFactory',
 
-                'BjyAuthorize\Provider\Identity\ZfcUserZendDb' => function ($sm) {
+                'ZfcAcl\Provider\Identity\ZfcUserZendDb' => function ($sm) {
                     $adapter = $sm->get('zfcuser_zend_db_adapter');
                     $provider = new Provider\Identity\ZfcUserZendDb($adapter);
                     $provider->setUserService($sm->get('zfcuser_user_service'));
                     return $provider;
                 },
 
-                'BjyAuthorize\Provider\Identity\ZfcUserDoctrine' => function ($sm) {
+                'ZfcAcl\Provider\Identity\ZfcUserDoctrine' => function ($sm) {
                     $em = $sm->get('doctrine.entitymanager.orm_default');
                     $provider = new Provider\Identity\ZfcUserDoctrine($em);
                     $provider->setUserService($sm->get('zfcuser_user_service'));
                     return $provider;
                 },
 
-                'BjyAuthorize\View\UnauthorizedStrategy' => function ($sm) {
-                    $template = $sm->get('BjyAuthorize\Service\Authorize')->getTemplate();
+                'ZfcAcl\View\UnauthorizedStrategy' => function ($sm) {
+                    $template = $sm->get('ZfcAcl\Service\Authorize')->getTemplate();
                     $strategy = new View\UnauthorizedStrategy;
                     $strategy->setTemplate($template);
                     return $strategy;
                 },
 
-                'BjyAuthorize\Provider\Role\ZendDb' => function ($sm) {
+                'ZfcAcl\Provider\Role\ZendDb' => function ($sm) {
                     $provider = new Provider\Role\ZendDb;
                     $provider->setAdapter($sm->get('Zend\Db\Adapter\Adapter'));
                     return $provider;
                 },
 
-                'BjyAuthorize\Provider\Role\Doctrine' => function ($sm) {
+                'ZfcAcl\Provider\Role\Doctrine' => function ($sm) {
                     $provider = new Provider\Role\Doctrine;
                     return $provider;
                 },
@@ -77,7 +77,7 @@ class Module implements
                 'isAllowed' => function($sm) {
                     $sm = $sm->getServiceLocator(); // get the main SM instance
                     $helper = new View\Helper\IsAllowed();
-                    $helper->setAuthorizeService($sm->get('BjyAuthorize\Service\Authorize'));
+                    $helper->setAuthorizeService($sm->get('ZfcAcl\Service\Authorize'));
                     return $helper;
                 }
             ),
@@ -91,7 +91,7 @@ class Module implements
                 'isAllowed' => function($sm) {
                     $sm = $sm->getServiceLocator(); // get the main SM instance
                     $helper = new Controller\Plugin\IsAllowed();
-                    $helper->setAuthorizeService($sm->get('BjyAuthorize\Service\Authorize'));
+                    $helper->setAuthorizeService($sm->get('ZfcAcl\Service\Authorize'));
                     return $helper;
                 }
             ),

@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\Acl;
+namespace ZfcAcl\Acl;
 
 use Zend\Permissions\Acl\Role\RoleInterface;
 

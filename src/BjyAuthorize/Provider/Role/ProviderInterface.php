@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\Provider\Role;
+namespace ZfcAcl\Provider\Role;
 
 interface ProviderInterface
 {

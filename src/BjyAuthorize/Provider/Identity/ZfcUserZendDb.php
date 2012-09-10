@@ -1,8 +1,8 @@
 <?php
 
-namespace BjyAuthorize\Provider\Identity;
+namespace ZfcAcl\Provider\Identity;
 
-use BjyAuthorize\Acl\Role;
+use ZfcAcl\Acl\Role;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Where;

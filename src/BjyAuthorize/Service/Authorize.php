@@ -1,11 +1,11 @@
 <?php
 
-namespace BjyAuthorize\Service;
+namespace ZfcAcl\Service;
 
-use BjyAuthorize\Provider\Role\ProviderInterface as RoleProvider;
-use BjyAuthorize\Provider\Resource\ProviderInterface as ResourceProvider;
-use BjyAuthorize\Provider\Rule\ProviderInterface as RuleProvider;
-use BjyAuthorize\Provider\Identity\ProviderInterface as IdentityProvider;
+use ZfcAcl\Provider\Role\ProviderInterface as RoleProvider;
+use ZfcAcl\Provider\Resource\ProviderInterface as ResourceProvider;
+use ZfcAcl\Provider\Rule\ProviderInterface as RuleProvider;
+use ZfcAcl\Provider\Identity\ProviderInterface as IdentityProvider;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class Authorize
@@ -114,7 +114,7 @@ class Authorize
 
     public function getIdentity()
     {
-        return 'bjyauthorize-identity';
+        return 'zfcacl-identity';
     }
 
     public function getAcl()

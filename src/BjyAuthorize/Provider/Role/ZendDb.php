@@ -1,8 +1,8 @@
 <?php
 
-namespace BjyAuthorize\Provider\Role;
+namespace ZfcAcl\Provider\Role;
 
-use BjyAuthorize\Acl\Role;
+use ZfcAcl\Acl\Role;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;

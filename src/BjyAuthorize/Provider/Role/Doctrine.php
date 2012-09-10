@@ -1,8 +1,8 @@
 <?php
 
-namespace BjyAuthorize\Provider\Role;
+namespace ZfcAcl\Provider\Role;
 
-use BjyAuthorize\Acl\Role;
+use ZfcAcl\Acl\Role;
 use Doctrine\ORM\EntityManager;
 
 class Doctrine implements ProviderInterface

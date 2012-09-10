@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\Service;
+namespace ZfcAcl\Service;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -11,7 +11,7 @@ class AuthorizeFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $sl)
     {
         $config = $sl->get('Configuration');
-        $config = $config['bjyauthorize'];
+        $config = $config['zfcacl'];
 
         $service = new Authorize($config, $sl);
 

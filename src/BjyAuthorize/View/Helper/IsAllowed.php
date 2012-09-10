@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\View\Helper;
+namespace ZfcAcl\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 

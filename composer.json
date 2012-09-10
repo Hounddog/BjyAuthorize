@@ -1,5 +1,5 @@
 {
-    "name": "bjyoungblood/bjy-authorize",
+    "name": "zf-commons/zfc-acl",
     "description": "Easy-use loader and manager for Zend\Acl with built-in route and dispatch protection",
     "type": "library",
     "keywords": [
@@ -7,7 +7,7 @@
         "acl",
         "zfc-user"
     ],
-    "homepage": "https://github.com/bjyoungblood/BjyAuthorize",
+    "homepage": "https://github.com/ZF-Commons/ZfcAcl",
     "authors": [
         {
             "name": "Ben Youngblood",
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-0": {
-            "BjyAuthorize": "src/"
+            "ZfcAcl": "src/"
         },
         "classmap": [
             "./"

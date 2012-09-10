@@ -1,9 +1,9 @@
 <?php
 
-namespace BjyAuthorize\Guard;
+namespace ZfcAcl\Guard;
 
-use BjyAuthorize\Provider\Rule\ProviderInterface as RuleProviderInterface;
-use BjyAuthorize\Provider\Resource\ProviderInterface as ResourceProviderInterface;
+use ZfcAcl\Provider\Rule\ProviderInterface as RuleProviderInterface;
+use ZfcAcl\Provider\Resource\ProviderInterface as ResourceProviderInterface;
 use Zend\Permissions\Acl\Resource\GenericResource;
 use Zend\Mvc\MvcEvent;
 
@@ -51,7 +51,7 @@ class Route implements RuleProviderInterface, ResourceProviderInterface
     public static function onRoute(MvcEvent $e)
     {
         $app        = $e->getTarget();
-        $service    = $app->getServiceManager()->get('BjyAuthorize\Service\Authorize');
+        $service    = $app->getServiceManager()->get('ZfcAcl\Service\Authorize');
         $match      = $app->getMvcEvent()->getRouteMatch();
         $routeName  = $match->getMatchedRouteName();
         $allowed = $service->isAllowed('route/' . $routeName);

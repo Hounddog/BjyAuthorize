@@ -1,8 +1,8 @@
 <?php
 
-namespace BjyAuthorize\Provider\Role;
+namespace ZfcAcl\Provider\Role;
 
-use BjyAuthorize\Acl\Role;
+use ZfcAcl\Acl\Role;
 
 class Config implements ProviderInterface
 {

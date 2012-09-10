@@ -1,10 +1,10 @@
 <?php
 
 return array(
-    'bjyauthorize' => array(
+    'zfcacl' => array(
         'default_role' => 'guest',
-        'identity_provider' => 'BjyAuthorize\Provider\Identity\ZfcUserZendDb',
-        'unauthorized_strategy' => 'BjyAuthorize\View\UnauthorizedStrategy',
+        'identity_provider' => 'ZfcAcl\Provider\Identity\ZfcUserZendDb',
+        'unauthorized_strategy' => 'ZfcAcl\View\UnauthorizedStrategy',
         'role_providers' => array(
         ),
         'resource_providers' => array(

@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\Acl\Guard;
+namespace ZfcAcl\Acl\Guard;
 
 interface GuardInterface
 {

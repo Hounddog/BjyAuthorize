@@ -1,8 +1,8 @@
 <?php
 
-namespace BjyAuthorize\View;
+namespace ZfcAcl\View;
 
-use BjyAuthorize\Service\Authorize;
+use ZfcAcl\Service\Authorize;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Http\Response as HttpResponse;

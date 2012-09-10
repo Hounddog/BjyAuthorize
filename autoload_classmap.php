@@ -5,6 +5,6 @@
  * Time: 12:00
  */
 return array(
-    'BjyAuthorize\Module'                                   => __DIR__ . '/Module.php',
+    'ZfcAcl\Module'                                   => __DIR__ . '/Module.php',
 
 );

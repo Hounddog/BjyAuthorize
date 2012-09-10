@@ -1,6 +1,6 @@
 <?php
 
-namespace BjyAuthorize\Controller\Plugin;
+namespace ZfcAcl\Controller\Plugin;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
